@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Photo from './Images/Home-bg.jpg';
+import Photo from 'Images/Home-bg.jpg';
 
 function HomePage() {
     
