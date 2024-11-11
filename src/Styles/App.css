@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #fff8ed;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding-top: .5rem;
+    padding-left: 4rem;
+    padding-bottom: .5rem;
+    text-align: start;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav {
+    position: relative;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-decoration: none;
+    position: relative;
+    right: -60em;
+    top: -5.3rem;
+    padding-right: 2rem;
+}
+
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    padding: 1rem;
+}
+.recipe-list p{
+    color: black;
+    background: white;
+}
+
+.recipe-card {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; 
+    border: 1px solid #ccc;
+    padding: 1rem;
+    width: 300px; 
+    text-align: center;
+    border-radius: 2rem;
+    position: relative;
+    z-index: 1;
+    min-height: 400px; 
+    background-color:white;
+}
+
+.recipe-card img {
+    width: 100%; 
+    max-width: 98%; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 2rem;
+    margin: 0 auto; 
+    left: -.2rem;
+}
+
+.recipe-actions {
+    margin-top: auto; /* Push actions to the bottom of the card */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 0.5rem; /* Space between buttons */
+}
+
+form {
+    position: relative;
+    top: 3rem;
+}
+
+input {
+    padding: .5rem;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    position: relative;
+    top: -6.6rem;
+    left: 46rem;
+}
+
+button {
+    background-color: white;
+    color: black;
+    padding: .5rem;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: -6.6rem;
+    right: -46.3rem;
+
+}
+
+button:hover {
+    background-color: rgba(240, 233, 233, 0.801);
+}
+
+.btn{
+    background-color: #011301;
+    color: white;
+    padding: .6rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin: 2rem;
+    position: relative;
+    z-index: 1;  
+    top: 0;
+    left: 0;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+
+}
+
+.recipe-div {
+    text-align: start;
+    padding-left: 7rem;
+}
+
+img {
+    width: 25%;
+    height: 30%;
+    position: relative;
+    right: -1rem;
+    padding-bottom: 5rem;
+    z-index: -300;
+}
+.Homebg{
+    position: relative;
+    top: 4rem;
+    z-index: -100;
+}
+.Homebg h1{
+    font-size:2.2rem ;
+}
