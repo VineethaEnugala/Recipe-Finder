@@ -1,5 +1,6 @@
 
 import React from 'react';
+import photo from './Images/Home-bg.jpg';
 
 function HomePage() {
     
@@ -8,7 +9,7 @@ function HomePage() {
 
         <div className='Homebg'>
             <h1>Find Recipes Here</h1>
-            <img src="./Images/Home-bg.jpg" alt="Home background img"/>
+            <img src={photo} alt="HomePage background img"/>
         </div>
 
     );
