@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter,Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Header from './Components/Header';
 import RecipeList from './Components/RecipeList';
 import RecipeDetails from './Components/RecipeDetails';
@@ -18,30 +18,49 @@ function App() {
         }
     };
 
-  const removeFromFavorites = (id) => {
-    setFavorites(favorites.filter(fav => fav.id !== id));
-  };
+    const removeFromFavorites = (id) => {
+        setFavorites(favorites.filter(fav => fav.id !== id));
+    };
 
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-  };
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+    };
 
-  const handleRecipes = (newRecipes) => {
-    setRecipes(newRecipes);
-  };
+    const handleRecipes = (newRecipes) => {
+        setRecipes(newRecipes);
+    };
 
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Header onSearch={handleSearch} setRecipes={handleRecipes} />
-        <Routes>
-          <Route path="/" element={recipes.length === 0 ? <HomePage /> : <RecipeList addToFavorites={addToFavorites} recipes={recipes} />} />
-          <Route path="/recipe/:id" element={<RecipeDetails addToFavorites={addToFavorites} favorites={favorites} />} /> {/* Pass favorites */}
-          <Route path="/favorites" element={<Favorites favorites={favorites} removeFromFavorites={removeFromFavorites} />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
+    // Define routes array
+    const routes = [
+        {
+            path: "/",
+            element: recipes.length === 0 ? <HomePage /> : <RecipeList addToFavorites={addToFavorites} recipes={recipes} />,
+        },
+        {
+            path: "/recipe/:id",
+            element: <RecipeDetails addToFavorites={addToFavorites} favorites={favorites} />,
+        },
+        {
+            path: "/favorites",
+            element: <Favorites favorites={favorites} removeFromFavorites={removeFromFavorites} />,
+        },
+    ];
+
+    // Create router with future flags enabled
+    const router = createBrowserRouter(routes, {
+        future: {
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+        },
+    });
+
+    return (
+        <RouterProvider router={router}>
+            <div className="App">
+                <Header onSearch={handleSearch} setRecipes={handleRecipes} />
+            </div>
+        </RouterProvider>
+    );
 }
 
 export default App;
