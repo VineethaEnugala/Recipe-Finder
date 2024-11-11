@@ -1,6 +1,5 @@
 
 import React from 'react';
-import Photo from '/Home-bg.jpg';
 
 function HomePage() {
     
@@ -9,7 +8,7 @@ function HomePage() {
 
         <div className='Homebg'>
             <h1>Find Recipes Here</h1>
-            <img src={Photo} alt="HomePage background img"/>
+            <img src={import.meta.env.BASE_URL+"/Images/Home-bg.jpg" }alt="Home background img"/>
         </div>
 
     );
